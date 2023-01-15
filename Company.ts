@@ -13,8 +13,9 @@ export class Company {
         }
         return res;
     }
-    getEmployee(id: number) {
-        return this.employees.find(empl => empl.id === id);
+    getEmployee(id: number): Employee | null {
+        const result = this.employees.find(empl => empl.id === id) || null;
+        return result;
     }
     getEmployeesBySalary(salaryFrom: number, salaryTo: number): Array<Employee> {
         const result: Array<Employee> = this.employees.filter(empl => {

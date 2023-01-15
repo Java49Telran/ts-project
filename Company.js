@@ -17,7 +17,8 @@ class Company {
         return res;
     }
     getEmployee(id) {
-        return this.employees.find(empl => empl.id === id);
+        const result = this.employees.find(empl => empl.id === id) || null;
+        return result;
     }
     getEmployeesBySalary(salaryFrom, salaryTo) {
         const result = this.employees.filter(empl => {
